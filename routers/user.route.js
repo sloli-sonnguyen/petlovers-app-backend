@@ -10,7 +10,7 @@ router.get('/:userId/info', controller.getInfoUserById);
 
 router.post('/', controller.createUser);
 
-router.post('/delete', controller.removeUserById);
+router.post('/:userId/delete', controller.removeUserById);
 
 router.post('/update', controller.updateUserById);
 

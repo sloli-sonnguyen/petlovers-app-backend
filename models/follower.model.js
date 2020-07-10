@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const followerSchema = new mongoose.Schema({
     userId: String,
-    quantity: Number,
-    content: Array
+    targetId: String
 });
 
 const Follower = mongoose.model('Follower', followerSchema, 'followers');

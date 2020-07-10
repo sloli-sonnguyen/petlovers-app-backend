@@ -10,7 +10,7 @@ router.get('/by-user/:userId/', controller.getPostByUserId);
 
 router.post('/', controller.createPost);
 
-router.post('/delete', controller.removePostById);
+router.post('/:postId/delete', controller.removePostById);
 
 
 

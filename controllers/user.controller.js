@@ -19,7 +19,7 @@ module.exports.createUser = async (req, res) => {
 }
 
 module.exports.removeUserById = async (req, res) => {
-    const userId = req.body.userId;
+    const userId = req.params.userId;
     await User.deleteOne({ _id: userId });
     res.send('Done');
 }
