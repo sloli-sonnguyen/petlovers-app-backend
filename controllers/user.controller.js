@@ -1,5 +1,4 @@
 const User = require('../models/user.model');
-const { use, param } = require('../routers/user.route');
 
 // module.exports.getListUsers = async (req, res) => {
 //     const users = await User.find();

@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 
 // require routers, middleware, validate
 const userRoute = require('./routers/user.route');
+const postRoute = require('./routers/post.route');
 
 
 
@@ -31,6 +32,7 @@ const userRoute = require('./routers/user.route');
 
 // app use
 app.use('/api/v1/users', userRoute);
+app.use('/api/v1/posts', postRoute)
 
 
 
