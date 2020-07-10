@@ -7,7 +7,7 @@ require('dotenv').config()
 
 // connect mongodb
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOOSE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGOOSE_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -22,11 +22,16 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 
 
 // require routers, middleware, validate
+const userRoute = require('./routers/user.route');
+
+
 
 
 
 
 // app use
+app.use('/api/v1/users', userRoute);
+
 
 
 
