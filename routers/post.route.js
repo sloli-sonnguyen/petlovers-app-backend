@@ -6,14 +6,11 @@ router.get('/', controller.getListPost);
 
 router.get('/:postId', controller.getPostById);
 
-router.get('/by-user/:userId/', controller.getPostByUserId);
+router.get('/by-userId/:userId', controller.getPostByUserId);
 
 router.get('/:postId/delete', controller.removePostById);
 
 router.post('/', controller.createPost);
-
-
-
 
 
 module.exports = router;

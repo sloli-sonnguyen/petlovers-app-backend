@@ -1,13 +1,13 @@
 const Post = require('../models/post.model');
 
 module.exports.getListPost = async (req, res) => {
-    const posts = await User.find();
+    const posts = await Post.find();
     res.json(posts);
 }
 
 module.exports.getPostById = async (req, res) => {
     const postId = req.params.postId;
-    const post = await Post.find({ _id: postId });
+    const post = await Post.findOne({ _id: postId });
     res.json(post);
 }
 
