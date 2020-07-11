@@ -25,7 +25,7 @@ module.exports.removeUserById = async (req, res) => {
 }
 
 module.exports.updateUserById = async (req, res) => {
-    const query = { _id: req.body.userId };
+    const query = { _id: req.params.userId };
     const update = {
         ...req.body
     };
