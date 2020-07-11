@@ -10,11 +10,6 @@ router.get('/:userId/info', controller.getInfoUserById);
 
 router.get('/:userId/delete', controller.removeUserById);
 
-router.post('/', controller.createUser);
-
 router.post('/:userId/update', controller.updateUserById);
-
-
-
 
 module.exports = router;

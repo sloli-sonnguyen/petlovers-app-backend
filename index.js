@@ -28,15 +28,20 @@ const followerRoute = require('./routers/follower.route');
 const followingRoute = require('./routers/following.route');
 const postReactionRoute = require('./routers/postReaction.route');
 const commentReactionRoute = require('./routers/commentReaction.route');
+const authRoute = require('./routers/auth.route');
+
+// middleware
+const authMiddleware = require('./middleware/auth.middleware');
 
 // app use
-app.use('/api/v1/users', userRoute);
-app.use('/api/v1/posts', postRoute);
-app.use('/api/v1/comments', commentRoute);
-app.use('/api/v1/followers', followerRoute);
-app.use('/api/v1/followings', followingRoute);
-app.use('/api/v1/postReactions', postReactionRoute);
-app.use('/api/v1/commentReactions', commentReactionRoute);
+app.use('/api/v1/users', authMiddleware, userRoute);
+app.use('/api/v1/posts', authMiddleware, postRoute);
+app.use('/api/v1/comments', authMiddleware, commentRoute);
+app.use('/api/v1/followers', authMiddleware, followerRoute);
+app.use('/api/v1/followings', authMiddleware, followingRoute);
+app.use('/api/v1/postReactions', authMiddleware, postReactionRoute);
+app.use('/api/v1/commentReactions', authMiddleware, commentReactionRoute);
+app.use('/api/v1/auth', authRoute);
 
 // listen for request
 const listener = app.listen(port, () => {

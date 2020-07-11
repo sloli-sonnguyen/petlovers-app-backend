@@ -1,21 +1,9 @@
 const User = require('../models/user.model');
 
-// module.exports.getListUsers = async (req, res) => {
-//     const users = await User.find();
-//     res.json(users);
-// }
-
 module.exports.getUserById = async (req, res) => {
     const userId = req.params.userId;
     const user = await User.find({ _id: userId });
     res.json(user);
-}
-
-module.exports.createUser = async (req, res) => {
-    console.log(req.body);
-    const newUser = await User.create(req.body);
-    await newUser.save();
-    res.send('Created new account');
 }
 
 module.exports.removeUserById = async (req, res) => {
