@@ -1,5 +1,4 @@
 const Post = require('../models/post.model');
-const { post } = require('../routers/post.route');
 
 module.exports.getListPost = async (req, res) => {
     const posts = await User.find();

@@ -20,24 +20,23 @@ const app = express();
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-
 // require routers, middleware, validate
 const userRoute = require('./routers/user.route');
 const postRoute = require('./routers/post.route');
 const commentRoute = require('./routers/comment.route');
-
-
-
-
-
+const followerRoute = require('./routers/follower.route');
+const followingRoute = require('./routers/following.route');
+const postReactionRoute = require('./routers/postReaction.route');
+const commentReactionRoute = require('./routers/commentReaction.route');
 
 // app use
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/posts', postRoute);
 app.use('/api/v1/comments', commentRoute);
-
-
-
+app.use('/api/v1/followers', followerRoute);
+app.use('/api/v1/followings', followingRoute);
+app.use('/api/v1/postReactions', postReactionRoute);
+app.use('/api/v1/commentReactions', commentReactionRoute);
 
 // listen for request
 const listener = app.listen(port, () => {

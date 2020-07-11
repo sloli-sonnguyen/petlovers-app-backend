@@ -8,9 +8,9 @@ router.get('/:postId', controller.getPostById);
 
 router.get('/by-user/:userId/', controller.getPostByUserId);
 
-router.post('/', controller.createPost);
+router.get('/:postId/delete', controller.removePostById);
 
-router.post('/:postId/delete', controller.removePostById);
+router.post('/', controller.createPost);
 
 
 

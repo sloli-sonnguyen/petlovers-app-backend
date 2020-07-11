@@ -8,11 +8,11 @@ router.get('/:userId', controller.getUserById);
 
 router.get('/:userId/info', controller.getInfoUserById);
 
+router.get('/:userId/delete', controller.removeUserById);
+
 router.post('/', controller.createUser);
 
-router.post('/:userId/delete', controller.removeUserById);
-
-router.post('/update', controller.updateUserById);
+router.post('/:userId/update', controller.updateUserById);
 
 
 
