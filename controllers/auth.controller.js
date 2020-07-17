@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 
 // config bcrypt password
 const bcrypt = require('bcrypt');
-const { use } = require('../routers/auth.route');
 const saltRounds = 10;
 
 module.exports.postSignup = async (req, res) => {
