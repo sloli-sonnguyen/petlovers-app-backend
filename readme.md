@@ -2,7 +2,7 @@
 Web app where people like dog and cat !
 
 # Backend
-Because of SPA , backend just build API
+Backend just build API
 
 # Knowledge 
 1. Expressjs
