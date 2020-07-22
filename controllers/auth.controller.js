@@ -32,5 +32,12 @@ module.exports.postLogin = async (req, res) => {
     //-----------------------
     const payload = { id: hadUserInDatabase._id };
     const accessToken = jwt.sign(payload, process.env.jwt, { expiresIn: 10 * 60 * 1000 });
-    res.status(201).json({ success: true, accessToken, msg: "Đăng nhập thành công" });
+    const userInfo = {
+        name: hadUserInDatabase.name,
+        id: hadUserInDatabase._id,
+        avatarUrl: hadUserInDatabase.avatarUrl,
+        backgroundUrl: hadUserInDatabase.backgroundUrl,
+        introduce: hadUserInDatabase.introduce
+    }
+    res.status(201).json({ success: true, accessToken, msg: "Đăng nhập thành công", userInfo: userInfo });
 }
