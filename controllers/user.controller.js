@@ -21,6 +21,13 @@ module.exports.updateUserById = async (req, res) => {
     res.send('Done');
 }
 
+module.exports.getAllUsersInfo = async (req, res) => {
+    console.log('hi');
+    User.find({}, 'name introduce avatarUrl backgroundUrl', function (err, docs) {
+        res.json(docs);
+    });
+}
+
 module.exports.getInfoUserById = async (req, res) => {
     const userId = req.params.userId;
     const user = await User.findOne({ _id: userId });
@@ -44,3 +51,4 @@ module.exports.searchUser = async (req, res) => {
     }
     res.json(users);
 }
+

@@ -4,6 +4,8 @@ const controller = require('../controllers/user.controller');
 
 router.get('/', controller.searchUser);
 
+router.get('/get-info', controller.getAllUsersInfo);
+
 router.get('/:userId', controller.getUserById);
 
 router.get('/:userId/info', controller.getInfoUserById);
