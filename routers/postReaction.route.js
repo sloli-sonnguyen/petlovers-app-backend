@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/postReaction.controller');
 
-router.get('/by-postId/:postId', controller.getPostReactionsByPostId);
+router.get('/:postId/by-postId', controller.getPostReactionsByPostId);
 
 router.get('/:postReactionId/delete', controller.removePostReactionById);
 

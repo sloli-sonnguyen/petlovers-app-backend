@@ -2,6 +2,7 @@ const PostReaction = require('../models/postReaction.model');
 
 module.exports.getPostReactionsByPostId = async (req, res) => {
     const postId = req.params.postId;
+    console.log('sadasdasdasdasda', postId);
     const postReactions = await PostReaction.find({ postId: postId });
     res.json(postReactions);
 }
