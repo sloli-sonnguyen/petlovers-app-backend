@@ -4,7 +4,7 @@ const controller = require('../controllers/comment.controller');
 
 router.get('/', controller.getComments);
 
-router.get('/by-postId/:postId', controller.getCommentsByPostId);
+router.get('/:postId/by-postId', controller.getCommentsByPostId);
 
 router.get('/:commendId', controller.getCommentsById);
 
